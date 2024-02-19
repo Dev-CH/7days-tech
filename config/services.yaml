@@ -23,6 +23,9 @@ services:
     Infrastructure\:
         resource: '../src/Infrastructure/'
 
+    Infrastructure\Repository\PostRepositoryInterface:
+        alias: App\Repository\PostRepository
+
     Adapter\:
         resource: '../src/Adapter/'
 

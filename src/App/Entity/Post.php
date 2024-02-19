@@ -27,6 +27,23 @@ class Post
      */
     private $content;
 
+    /**
+     * @param $title
+     * @param $content
+     *
+     * @return Post
+     */
+    public static function create($title, $content): Post
+    {
+        $post = new Post();
+
+        $post->setTitle($title);
+        $post->setContent($content);
+
+        return $post;
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;
