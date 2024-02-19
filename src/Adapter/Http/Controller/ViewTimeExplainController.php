@@ -22,14 +22,12 @@ class ViewTimeExplainController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $submit = $form->getData();
-            if (!$submit instanceof TimeExplain) {
-                throw new \Exception('Invalid input');
-            }
+            /** @var $formData TimeExplain */
+            $formData = $form->getData();
 
             $dto = new TimeExplainer(
-                new \DateTimeImmutable($submit->getDate()),
-                new DateTimeZone($submit->getTimezone()),
+                new \DateTimeImmutable($formData->getDate()),
+                new DateTimeZone($formData->getTimezone()),
             );
         }
 
