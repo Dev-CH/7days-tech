@@ -20,6 +20,12 @@ services:
             - '../src/App/Entity/'
             - '../src/App/Kernel.php'
 
+    Infrastructure\:
+        resource: '../src/Infrastructure/'
+
+    Adapter\:
+        resource: '../src/Adapter/'
+
     Domain\:
         resource: '../src/Domain/'
 
